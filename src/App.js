@@ -2,7 +2,6 @@ import {
 	BrowserRouter as Router,
 	Switch,
 	Route,
-	Link,
 	useParams,
 } from 'react-router-dom';
 
@@ -47,7 +46,29 @@ const Album = () => {
 		</>
 	);
 };
-
+const Comments = ({ topicId }) => {
+	return (
+		<>
+			<div id='disqus_thread'></div>
+			<script
+				dangerouslySetInnerHTML={{
+					__html: ` 
+      var disqus_config = function () {
+      this.page.url = https://alumni-events.netlify.app/${topicId};  // Replace PAGE_URL with your page's canonical URL variable
+      this.page.identifier = ${topicId}; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+      };
+      
+      (function() { // DON'T EDIT BELOW THIS LINE
+      var d = document, s = d.createElement('script');
+      s.src = 'https://alumni-events-1.disqus.com/embed.js';
+      s.setAttribute('data-timestamp', +new Date());
+      (d.head || d.body).appendChild(s);
+      })();`,
+				}}
+			></script>
+		</>
+	);
+};
 function Topic() {
 	let { topicId } = useParams();
 	return (
@@ -78,6 +99,7 @@ function Topic() {
 					<div className='col col-8'>
 						<div className='rounded-lg bg-white p-3 shadow-sm'>
 							<img
+								alt='Empty'
 								className='mw-100'
 								src='https://media.almabaseapp.com/558/uploads/c72aa6eed76a4e3e8f3301742dbb1486.jpg'
 							/>
@@ -93,6 +115,7 @@ function Topic() {
 					</div>
 				</div>
 			</div>
+			<Comments topicId={topicId} />
 			<div className='my-3 ' />
 		</div>
 	);
@@ -104,8 +127,8 @@ function App() {
 				<div className='navbar navbar-dark bg-dark shadow-sm'>
 					<div className='container'>
 						<a
-							href='#'
 							className='navbar-brand d-flex align-items-center'
+							href='/'
 						>
 							<svg
 								xmlns='http://www.w3.org/2000/svg'
@@ -145,6 +168,7 @@ function App() {
 					<div className='row py-lg-5 bg-dark'>
 						<div className='col   '>
 							<img
+								alt=''
 								className='mw-100'
 								src='https://media.almabaseapp.com/558/eventsx/event-x-images/6486/ab75f077068d465eb72e48d702f055a8.jpg'
 							/>
@@ -171,8 +195,8 @@ function App() {
 						<div className='album py-5 bg-light'>
 							<div className='container'>
 								<div className='row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3'>
-									{[...Array(9)].map(() => {
-										return <Album />;
+									{[...new Array(9)].map((_, i) => {
+										return <Album key={i} />;
 									})}
 								</div>
 							</div>
