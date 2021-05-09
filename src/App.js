@@ -1,58 +1,13 @@
 import { useEffect } from 'react';
-import {
-	BrowserRouter as Router,
-	Switch,
-	Route,
-	useParams,
-} from 'react-router-dom';
+import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
+import FleaMarket from './FleaMarket';
 
-const Album = () => {
-	const id = Number.parseInt(Math.random() * 100);
-	return (
-		<>
-			<div className='col'>
-				<div className='card shadow-sm'>
-					<div
-						className='bd-placeholder-img card-img-top text-white align-items-center d-flex'
-						style={{
-							height: 200,
-							background: 'no-repeat 50%',
-							backgroundSize: 'cover',
-							backgroundImage: `url('https://picsum.photos/id/${id}/200/300')`,
-						}}
-					>
-						<div className=' text-center   w-100'>Title</div>
-					</div>
-
-					<div className='card-body'>
-						<p className='card-text'>
-							This is a wider card with supporting text below as a
-							natural lead-in to additional content. This content
-							is a little bit longer.
-						</p>
-						<div className='d-flex justify-content-between align-items-center'>
-							<div className='btn-group'>
-								<a
-									className='btn btn-sm btn-outline-secondary'
-									href='/Event%20name'
-								>
-									View
-								</a>
-							</div>
-							<small className='text-muted'>9 mins</small>
-						</div>
-					</div>
-				</div>
-			</div>
-		</>
-	);
-};
-const Comments = ({ topicId }) => {
+const Comments = () => {
 	useEffect(() => {
 		// https://alumni-events.netlify.app/
 		window.disqus_config = function () {
-			this.page.url = `https://alumni-events.netlify.app/${topicId} `;
-			this.page.identifier = topicId;
+			this.page.url = `https://alumni-events.netlify.app/ `;
+			this.page.identifier = '/';
 		};
 		(function () {
 			// DON'T EDIT BELOW THIS LINE
@@ -65,18 +20,16 @@ const Comments = ({ topicId }) => {
 	});
 	return (
 		<>
-			<div id='disqus_thread' className="my-3"></div>
+			<div id='disqus_thread' className='my-3'></div>
 		</>
 	);
 };
 function Topic() {
-	let { topicId } = useParams();
 	return (
 		<div className='container'>
 			<div>
 				<div className='my-3'>
-					<h1>{topicId}</h1>
-					<div className='rounded-lg bg-white p-3 shadow-sm d-flex justify-content-between'>
+					<div className='rounded bg-white p-3 shadow-sm d-flex justify-content-between'>
 						<span>
 							<span className=' '>Fri, Apr 3, 2020</span>
 							<br />
@@ -97,25 +50,55 @@ function Topic() {
 
 				<div className='row  '>
 					<div className='col col-8'>
-						<div className='rounded-lg bg-white p-3 shadow-sm'>
+						<div className='rounded bg-white p-3 shadow-sm'>
 							<img
 								alt='Empty'
 								className='mw-100'
-								src='https://media.almabaseapp.com/558/uploads/c72aa6eed76a4e3e8f3301742dbb1486.jpg'
+								src='/My_Invitation.jpeg'
 							/>
 						</div>
 					</div>
 					<div className='col col-4'>
-						<div className='rounded-lg bg-white p-3 shadow-sm'>
-							<h3>Agenda</h3>
-							0204-0334: Enter <br />
-							0204-0334: Party <br />
-							0204-0334: Close <br />
+						<div className='rounded bg-white p-3 shadow-sm mb-3'>
+							<h3 className='my-3'>What’s there?</h3>
+
+							<h4 className='h6'>
+								1. Much laughter with online warm-up game
+							</h4>
+
+							<h4 className='h6'>2. Sharing: Life in pandemic</h4>
+							<p className='ps-3'>
+								-What’s on campus today? <br />
+								-Remote work: New normal – Alumni sharing
+								<br />
+								-Mental health in lockdowns – Alumni sharing
+								<br />
+								-Breakout rooms: How are you? How you’re dealing
+								with the crisis, or what you’re doing to help
+								those in need?
+								<br />
+							</p>
+							<h4 className='h6'>
+								3. Online Flea market: Studying equipment and
+								others for sales/giving-away!
+							</h4>
+							<p className='ps-3'>
+								Old laptop, webcam, keyboard, desk or any other
+								items - sell or give away to your
+								fellow-students .
+							</p>
+
+							<a
+								href='/flea-market'
+								className='btn d-block btn-primary my-3 text-uppercase fw-bold'
+							>
+								Here
+							</a>
 						</div>
+						<Comments />
 					</div>
 				</div>
 			</div>
-			<Comments topicId={topicId} />
 			<div className='my-3 ' />
 		</div>
 	);
@@ -123,84 +106,42 @@ function Topic() {
 function App() {
 	return (
 		<Router>
-			<header>
-				<div className='navbar navbar-dark bg-dark shadow-sm'>
-					<div className='container'>
-						<a
-							className='navbar-brand d-flex align-items-center'
-							href='/'
-						>
-							<svg
-								xmlns='http://www.w3.org/2000/svg'
-								width='20'
-								height='20'
-								fill='none'
-								stroke='currentColor'
-								strokeLinecap='round'
-								strokeLinejoin='round'
-								strokeWidth='2'
-								aria-hidden='true'
-								className='me-2'
-								viewBox='0 0 24 24'
-							>
-								<path d='M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z'></path>
-								<circle cx='12' cy='13' r='4'></circle>
-							</svg>
-							<strong>Album</strong>
-						</a>
-						<button
-							className='navbar-toggler collapsed'
-							type='button'
-							data-bs-toggle='collapse'
-							data-bs-target='#navbarHeader'
-							aria-controls='navbarHeader'
-							aria-expanded='false'
-							aria-label='Toggle navigation'
-						>
-							<span className='navbar-toggler-icon'></span>
-						</button>
-					</div>
-				</div>
-			</header>
+			<header></header>
 
 			<main>
-				<section className='py-5 text-center container'>
-					<div className='row py-lg-5 bg-dark'>
+				<section className='py-3 text-center container'>
+					<div className='row '>
 						<div className='col   '>
-							<img
-								alt=''
-								className='mw-100'
-								src='https://media.almabaseapp.com/558/eventsx/event-x-images/6486/ab75f077068d465eb72e48d702f055a8.jpg'
-							/>
+							<div className=' position-relative  bg-dark'>
+								<img
+									alt=''
+									className='mw-100'
+									src='/preview-113565-dUzlJu9gJJ-high_0007.jpg'
+								/>
+								<div className='position-absolute bottom-0 start-0 end-0 p-3 text-start'>
+									<span className=' bg-white d-inline-block'>
+										<img
+											src='/Fachhochschule_Südwestfalen_20xx_logo.svg.png'
+											height={100}
+											alt=''
+										/>
+									</span>
+									<h1 className=' text-white p-3 display-3  bg-dark fw-bold '>
+										SH SWF Alumni Virtual Event
+									</h1>
+								</div>
+							</div>
 						</div>
 					</div>
 				</section>
 
 				<Switch>
-					<Route path={`/:topicId`}>
-						<Topic />
-						<div className='container'>
-							<div className='text-center my-3 '>
-								<a
-									href='/'
-									className='btn d-block btn-secondary'
-								>
-									See all
-								</a>
-							</div>
-						</div>
+					<Route path={`/flea-market`}>
+						<FleaMarket />
 					</Route>
 
 					<Route path='/'>
-						<div className='album py-5 bg-light'>
-							<div className='container'>
-								<div className='row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3'>
-									{[...new Array(9)].map((_, i) => {
-										return <Album key={i} />;
-									})}
-								</div>
-							</div>
-						</div>
+						<Topic />
 					</Route>
 				</Switch>
 			</main>
