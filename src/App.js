@@ -78,34 +78,39 @@ function Topic() {
 								</a>
 							</div>
 							<hr />
-							<h3 className='my-3'>What’s there?</h3>
-
-							<h4 className='h6'>
-								1. Much laughter with online warm-up game
-							</h4>
-
-							<h4 className='h6'>2. Sharing: Life in pandemic</h4>
+							<h3 className='my-3'>OUR NIGHT</h3>
+							<h4 className='h6'>5 PM – 6 PM</h4>
 							<p className='ps-3'>
+								Much laughter with online warm-up game
+							</p>
+							<h4 className='h6'>6 PM – 7.30 PM</h4>
+							<p className='ps-3'>
+								Sharing: Life in pandemic
+								<br />
 								- What’s on campus today? <br />
 								- Remote work: New normal – Alumni sharing
 								<br />
 								- Mental health in lockdowns – Alumni sharing
 								<br />
-								- Dinner rooms: How are you? How you’re
-								dealing with the crisis, or what you’re doing to
-								help those in need?
-								<br />
 							</p>
-							<h4 className='h6'>
-								3. Online Flea market: Studying equipment and
-								others for sales/giving-away!
-							</h4>
+							<h4 className='h6'>7.30 PM – 8 PM </h4>
 							<p className='ps-3'>
-								Old laptop, webcam, keyboard, desk or any other
-								items - sell or give away to your
-								fellow-students. Join the Flea Market here
+								Dinner rooms:
+								<br />
+								How are you? How you’re dealing with the crisis,
+								or what you’re doing to help those in need?{' '}
+								<br />– Having great dinner with group of 4 new
+								friends
 							</p>
-
+							<h4 className='h6'>Online Flea market:</h4>
+							<p className='ps-3'>
+								Studying equipment and others for
+								sales/giving-away!
+								<br />
+								Old laptops, webcams, keyboards, desks or any
+								other items - sell or give away to your
+								fellow-students. Join the Flea Market here.
+							</p>
 							<a
 								href='/flea-market'
 								className='btn d-block btn-outline-primary my-3 text-uppercase fw-bold'
