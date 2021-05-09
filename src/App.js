@@ -31,12 +31,9 @@ function Topic() {
 				<div className='my-3'>
 					<div className='rounded bg-white p-3 shadow-sm d-flex justify-content-between'>
 						<span>
-							<span className=' '>Fri, Apr 3, 2020</span>
+							<span className=' '>Fri, Jun 25, 2021</span>
 							<br />
-							<span className=' '>
-								<span>05:00 pm EDT</span>
-								<span>&nbsp; to 06:00 pm EDT</span>
-							</span>
+							<span className=' '>5:00 pm to 8:00 pm</span>
 						</span>
 						<button
 							disabled=''
@@ -60,6 +57,25 @@ function Topic() {
 					</div>
 					<div className='col col-4'>
 						<div className='rounded bg-white p-3 shadow-sm mb-3'>
+							<h3>Invite your friend</h3>
+							<div>
+								<p>
+									Know someone who might be interested in
+									attending? Let them know by sharing this
+									event.
+								</p>
+								<a
+									role='button'
+									className='btn btn-light btn-sm'
+								>
+									<img
+										src='/sharing_share_icon_124236.png'
+										height={16}
+									/>
+									<span> Share </span>
+								</a>
+							</div>
+							<hr />
 							<h3 className='my-3'>What’s there?</h3>
 
 							<h4 className='h6'>
@@ -68,14 +84,14 @@ function Topic() {
 
 							<h4 className='h6'>2. Sharing: Life in pandemic</h4>
 							<p className='ps-3'>
-								-What’s on campus today? <br />
-								-Remote work: New normal – Alumni sharing
+								- What’s on campus today? <br />
+								- Remote work: New normal – Alumni sharing
 								<br />
-								-Mental health in lockdowns – Alumni sharing
+								- Mental health in lockdowns – Alumni sharing
 								<br />
-								-Breakout rooms: How are you? How you’re dealing
-								with the crisis, or what you’re doing to help
-								those in need?
+								- Breakout rooms: How are you? How you’re
+								dealing with the crisis, or what you’re doing to
+								help those in need?
 								<br />
 							</p>
 							<h4 className='h6'>

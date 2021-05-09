@@ -1,4 +1,31 @@
 const FleaMarket = () => {
+	//      -
+	// laptop@gmail.com
+	// Contact:
+
+	const data = [
+		{
+			img: 'laptop.png',
+			name: 'Laptop',
+			loc: 'Soest',
+			price: '25EUR',
+			contact: 'laptop@gmail.com',
+		},
+		{
+			img: 'ttt.png',
+			name: 'Mouse & Keyboard ',
+			loc: 'Dusseldorf',
+			price: 'Free',
+			contact: ' mouse@gmail.com',
+		},
+		{
+			img: 'aaa.png',
+			name: 'Desk',
+			loc: 'Soest',
+			price: ' Free',
+			contact: ' desk@gmail.com',
+		},
+	];
 	return (
 		<div className='album py-5 bg-light'>
 			<div className='container'>
@@ -11,8 +38,8 @@ const FleaMarket = () => {
 					FH SWF Flea market 2021
 				</h2>
 				<div className='row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3'>
-					{[...new Array(3)].map((_, i) => {
-						return <Album key={i} />;
+					{[...data].map((o, i) => {
+						return <Album key={i} o={o} />;
 					})}
 				</div>
 
@@ -33,8 +60,8 @@ const FleaMarket = () => {
 
 export default FleaMarket;
 
-const Album = () => {
-	const id = Number.parseInt(Math.random() * 100);
+const Album = ({ o }) => {
+	const { img, loc, price, contact, name } = o;
 	return (
 		<>
 			<div className='col'>
@@ -45,16 +72,16 @@ const Album = () => {
 							height: 200,
 							background: 'no-repeat 50%',
 							backgroundSize: 'cover',
-							backgroundImage: `url('https://picsum.photos/id/${id}/200/300')`,
+							backgroundImage: `url('/${img}')`,
 						}}
 					></div>
 
 					<div className='card-body'>
 						<p className='card-text text-center m-0'>
-							Laptop <br />
-							300 EUR <br />
-							Soest <br />
-							abc@gmail.com
+							{name} <br />
+							{price} <br />
+							{loc} <br />
+							{contact}
 							<br />
 						</p>
 					</div>
