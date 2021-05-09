@@ -67,8 +67,10 @@ function Topic() {
 								<a
 									role='button'
 									className='btn btn-light btn-sm'
+									href='/'
 								>
 									<img
+										alt=''
 										src='/sharing_share_icon_124236.png'
 										height={16}
 									/>
