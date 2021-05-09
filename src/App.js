@@ -41,9 +41,9 @@ function Topic() {
 						<button
 							disabled=''
 							type='button'
-							className=' btn btn-secondary'
+							className=' btn btn-primary fw-bold'
 						>
-							<span>Registrations closed</span>
+							<span>Register now</span>
 						</button>
 					</div>
 				</div>
@@ -90,7 +90,7 @@ function Topic() {
 
 							<a
 								href='/flea-market'
-								className='btn d-block btn-primary my-3 text-uppercase fw-bold'
+								className='btn d-block btn-outline-primary my-3 text-uppercase fw-bold'
 							>
 								Here
 							</a>

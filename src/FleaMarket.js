@@ -15,6 +15,17 @@ const FleaMarket = () => {
 						return <Album key={i} />;
 					})}
 				</div>
+
+				<div
+					class='jumbotron bg-secondary text-light p-3 py-5 text-center mx-auto my-5'
+					role='button'
+					style={{ width: '70%' }}
+				>
+					<div class='display-4'>Upload your items here</div>
+					<p class='lead'>
+						(including photos, price, location, contact detail)
+					</p>
+				</div>
 			</div>
 		</div>
 	);
