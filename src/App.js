@@ -91,7 +91,7 @@ function Topic() {
 								<br />
 								- Mental health in lockdowns – Alumni sharing
 								<br />
-								- Breakout rooms: How are you? How you’re
+								- Dinner rooms: How are you? How you’re
 								dealing with the crisis, or what you’re doing to
 								help those in need?
 								<br />
@@ -103,7 +103,7 @@ function Topic() {
 							<p className='ps-3'>
 								Old laptop, webcam, keyboard, desk or any other
 								items - sell or give away to your
-								fellow-students .
+								fellow-students. Join the Flea Market here
 							</p>
 
 							<a
@@ -145,7 +145,7 @@ function App() {
 										/>
 									</span>
 									<h1 className=' text-white p-3 display-3  bg-dark fw-bold '>
-										SH SWF Alumni Virtual Event
+										FH SWF Alumni Virtual Event
 									</h1>
 								</div>
 							</div>
